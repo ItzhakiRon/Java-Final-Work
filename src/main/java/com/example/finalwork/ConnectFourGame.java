@@ -16,9 +16,13 @@ public class ConnectFourGame extends Application {
             server = new GameServer();
             server.start();
 
+            // Get the dynamically assigned port
+            int serverPort = server.getPort();
+
             // Create and show the login view
             LoginView loginView = new LoginView();
-            new LoginPresenter(loginView, primaryStage);
+            // Pass the server port to the LoginPresenter
+            new LoginPresenter(loginView, primaryStage, serverPort);
 
             // Set up the initial scene with login view
             Scene scene = new Scene(loginView, 600, 800);
@@ -36,7 +40,25 @@ public class ConnectFourGame extends Application {
     public void stop() {
         // Clean up resources when the application closes
         if (server != null) {
-            server.stop();
+            try {
+                // First notify any connected clients about shutdown
+                for (String roomName : server.getAvailableRooms()) {
+                    server.removeRoom(roomName);
+                }
+
+                // Then stop the server
+                server.stop();
+
+                // Allow a brief moment for connections to close gracefully
+                Thread.sleep(100);
+
+            } catch (Exception e) {
+                System.err.println("Error during shutdown: " + e.getMessage());
+                e.printStackTrace();
+            } finally {
+                // Ensure server is marked as stopped even if an error occurred
+                server = null;
+            }
         }
     }
 

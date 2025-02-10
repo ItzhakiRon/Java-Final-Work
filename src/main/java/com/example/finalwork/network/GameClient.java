@@ -6,15 +6,19 @@ import java.util.function.Consumer;
 
 public class GameClient {
     private static final String SERVER_HOST = "localhost";
-    private static final int SERVER_PORT = 5000;
+    private final int serverPort;
 
     private Socket socket;
     private ObjectOutputStream out;
     private ObjectInputStream in;
     private Consumer<GameMessage> messageHandler;
 
+    public GameClient(int port) {
+        this.serverPort = port;
+    }
+
     public void connect() throws IOException {
-        socket = new Socket(SERVER_HOST, SERVER_PORT);
+        socket = new Socket(SERVER_HOST, serverPort);
         out = new ObjectOutputStream(socket.getOutputStream());
         in = new ObjectInputStream(socket.getInputStream());
 
