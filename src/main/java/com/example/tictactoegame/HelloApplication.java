@@ -27,10 +27,19 @@ public class HelloApplication extends Application {
     public static void switchToGame(int gameId) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("tic-tac-toe-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 700);
+        scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm()); // Add this line
         TicTacToeController controller = fxmlLoader.getController();
         controller.setGameId(gameId);
         controller.setConnection(socket, out, in);
         primaryStage.setTitle("Tic Tac Toe");
+        primaryStage.setScene(scene);
+    }
+
+    public static void switchToLeaderboard() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("leaderboard-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+        primaryStage.setTitle("Tic Tac Toe - Leaderboard");
         primaryStage.setScene(scene);
     }
 

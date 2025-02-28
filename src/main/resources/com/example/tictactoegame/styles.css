@@ -1,0 +1,156 @@
+/* Root styling with modern gradient background */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    -fx-padding: 20px;
+    -fx-pref-width: 600px;
+    -fx-pref-height: 700px;
+}
+
+/* Game grid with glass effect */
+.grid-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-padding: 15px;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-alignment: center;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 5);
+    -fx-min-width: 360px;
+    -fx-max-width: 360px;
+    -fx-min-height: 360px;
+    -fx-max-height: 360px;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 15;
+    -fx-border-width: 1px;
+}
+
+/* Game buttons with modern styling */
+.tic-tac-toe-button {
+    -fx-background-color: linear-gradient(to bottom right, #3498db, #2980b9);
+    -fx-text-fill: white;
+    -fx-font-size: 45px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-min-width: 110px;
+    -fx-max-width: 110px;
+    -fx-min-height: 110px;
+    -fx-max-height: 110px;
+    -fx-cursor: hand;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 10;
+    -fx-border-width: 1px;
+}
+
+.tic-tac-toe-button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #3498db, #3498db);
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.5), 10, 0, 0, 0);
+}
+
+/* Enhanced score board styling */
+.list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 10;
+    -fx-padding: 5px;
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+    -fx-min-height: 200px;
+    -fx-pref-height: 200px;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 10;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2);
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
+    -fx-background-insets: 2;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: rgba(52, 152, 219, 0.3);
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.2), 5, 0, 0, 0);
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: rgba(52, 152, 219, 0.5);
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+
+/* Player labels with enhanced styling */
+#playerXLabel, #playerOLabel {
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 20;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-min-width: 150px;
+    -fx-alignment: center;
+}
+
+#playerXLabel {
+    -fx-text-fill: #ff5252;
+    -fx-background-color: rgba(255, 82, 82, 0.1);
+}
+
+#playerOLabel {
+    -fx-text-fill: #69f0ae;
+    -fx-background-color: rgba(105, 240, 174, 0.1);
+}
+
+/* Timer and message styling */
+#timerLabel {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffd740;
+    -fx-background-color: rgba(255, 215, 64, 0.1);
+    -fx-background-radius: 20;
+    -fx-padding: 10px 20px;
+}
+
+#messageLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 10, 0, 0, 0);
+    -fx-padding: 15px;
+}
+
+/* Scrollbar styling */
+.list-view .scroll-bar:vertical,
+.list-view .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.list-view .scroll-bar:vertical .thumb,
+.list-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5;
+}
+
+.list-view .scroll-bar:vertical .thumb:hover,
+.list-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Game status labels */
+#gameIdLabel, #playerIdLabel, #connectedPlayersLabel {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 8px 15px;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 15;
+}
+
+.leaderboard-table .table-cell {
+    -fx-text-fill: black;
+}

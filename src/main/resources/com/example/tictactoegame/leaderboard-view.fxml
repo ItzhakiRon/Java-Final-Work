@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tictactoegame.LeaderboardController">
+    <Label text="Leaderboard" />
+    <TableView fx:id="leaderboardTable" styleClass="leaderboard-table">
+        <columns>
+            <TableColumn fx:id="playerColumn" text="Player" />
+            <TableColumn fx:id="scoreColumn" text="Score" />
+        </columns>
+    </TableView>
+</VBox>

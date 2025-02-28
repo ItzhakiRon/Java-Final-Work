@@ -49,7 +49,10 @@ public class TicTacToeController {
     private Timeline timeline;
     private int timeSeconds = 0;
 
+    @FXML
     public void initialize() {
+        leaderboardListView.setFixedCellSize(40); // Fixed height for each score entry
+        leaderboardListView.setStyle("-fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
         for (int i = 0; i < 9; i++) {
             buttons[i] = new Button("");
             buttons[i].setMinSize(100, 100);
@@ -199,6 +202,15 @@ public class TicTacToeController {
             } else if (cell.equals("O")) {
                 buttons[i].getStyleClass().add("o-button");
             }
+        }
+    }
+
+    private void updateButton(Button button, String text) {
+        button.setText(text);
+        if (text.equals("X")) {
+            button.setStyle("-fx-text-fill: #E74C3C;"); // Red color for X
+        } else if (text.equals("O")) {
+            button.setStyle("-fx-text-fill: #2ECC71;"); // Green color for O
         }
     }
 
