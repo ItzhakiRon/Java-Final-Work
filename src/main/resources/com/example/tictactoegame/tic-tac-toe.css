@@ -71,3 +71,14 @@
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
 }
+
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
+
+.list-view .list-cell {
+    -fx-text-fill: black;  /* Add this new rule to make the text black */
+}
