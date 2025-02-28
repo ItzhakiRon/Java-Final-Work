@@ -1,1 +1,2 @@
-"# Java-Final-Work" 
+# Java-Final-Work
+Repository for a Final Work in Java
